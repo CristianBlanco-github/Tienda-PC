@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.sexo{
+  background-color: #61dafb;
+  border-radius: 19px;
+  font-family: 'Courier New', Courier, monospace;
+}
