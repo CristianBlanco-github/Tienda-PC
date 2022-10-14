@@ -1,0 +1,9 @@
+.detail-container{
+    display: block;
+    background-color: rgb(238, 238, 238);
+}
+.img-container{
+    color: black;
+    width: 50%;
+    height: 50%;
+}
