@@ -7,7 +7,7 @@ export const CartWidget=()=>{
     return(
             <div className='carritologo'>
                 <FontAwesomeIcon  icon={faCartShopping}/>
-                <span>{value. roductosCarrito.length}</span>
+                <span>{value.roductosCarrito.length}</span>
             </div>
     )
 }
