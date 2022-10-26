@@ -8,7 +8,7 @@ export const ItemDetail=({item})=>{
     const addProduct=(variable1)=>{
         // console.log('contador',variable1)
         setContador(variable1)
-        agregarProducto({title:'sexo',price:200, cantidad:variable1})
+        agregarProducto({title:'doc',price:200, cantidad:variable1})
     }
     return(
         <div className='detail-container'>
