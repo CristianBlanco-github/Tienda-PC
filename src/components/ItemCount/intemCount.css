@@ -1,0 +1,39 @@
+.input{
+    height:57px;
+    display: block;
+    justify-content: space-between;
+     align-items: center; 
+}
+/* .input__minus{
+    display: flex;
+    width: 25px;
+    height: 100%;
+    padding:24px 5px ;
+    cursor: pointer;
+} */
+.input__number{
+    width: 100%;
+    border: none;
+    color: rgb(8, 8, 8);
+    font-size: 1.2em;
+    font-weight: 700;
+    text-align: center;
+    outline: none;
+}
+.contenedor-controles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background: white;
+    width: 90%;
+    height: 30px;
+}
+/* .input__plus{
+    display: flex;
+    width: 25px;
+    height: 100%;
+    padding:19px 3px ;
+    cursor: pointer;
+} */ 

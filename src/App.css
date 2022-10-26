@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(236, 18, 18);
 }
 
 .App-link {
@@ -37,8 +37,8 @@
   }
 }
 
-.sexo{
-  background-color: #61dafb;
+.boby{
+  background-color: #27bce6;
   border-radius: 19px;
   font-family: 'Courier New', Courier, monospace;
 }
