@@ -10,27 +10,6 @@ import './CartContainer.css'
 export const CartContainer=()=>{
     // const value=useContext(CartContext)
     const {productosCarrito,getTotalPrecio,getTotalCantidad,removeItem,removeCarrito}=useContext(CartContext)
-    const [CompraId,setCompraId]=useState('')
-    const sendOrder=(evt)=>{
-        evt.preventDefault()
-        const compra= {
-            buyer:{ 
-                name:evt.target[0].value, 
-                phone:evt.target[1].value, 
-                email:evt.target[2].value 
-            }, 
-            items: productosCarrito,
-            date:4/11/22,
-            total: getTotalPrecio()   
-        }
-        // crear la referncia pra enviar a la base de datos
-        const queryRef=collection(tf,'orders')
-        //agregar la informacion
-        addDoc(queryRef,compra).then((resultado)=>{
-        setCompraId(resultado.id)
-    })
-    
-    }
     if (productosCarrito.length === 0) {
         return (
         <div className='center'>
@@ -47,7 +26,6 @@ export const CartContainer=()=>{
         <div className="carrito">
             <div>
                 <p>CARRITO</p>
-                
                 {
                     productosCarrito.map((producto)=>(
                         <div className="portada">
