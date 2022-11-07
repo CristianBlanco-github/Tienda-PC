@@ -17,6 +17,7 @@
 }
 .listado li {
   margin: 30px;
+  text-decoration: none;
    
 }
 .listado li a{
@@ -29,3 +30,9 @@
     width: 265px;
     height: 75px;
 }
+.claseActive{
+    text-decoration: none;
+    
+}
+
+

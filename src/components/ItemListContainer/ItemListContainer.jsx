@@ -1,35 +1,35 @@
 import { useEffect,useState,useContext } from "react";
 import { useParams } from "react-router-dom"
-import { CartContext } from "../../context/CartContext";
-import { arregloProductos } from "../baseDatos/baseDatos";
 import { ItemList } from "../ItemList/ItemList";
 import"./ItemListContainer.css"
-export const ItemListContainer=({greeting})=>{
-    const{productosCarrito}=useContext(CartContext)
+import {tf} from '../../utils/firebase'
+import { collection, getDocs,query,where } from "firebase/firestore";
+export const ItemListContainer=()=>{
     const{categoryId}=useParams();
     const[productos, setProductos]=useState([])
-    const promesa =new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            resolve(arregloProductos);
-        },2000);
-    })
+    const [loading,setLoading]=useState(true)
     useEffect(()=>{
-        promesa.then((response)=>{
-            if (categoryId){
-                //VAMOS A FILTRAR
-                const productsFiltered=response.filter(elm=>elm.categoria===categoryId)
-                setProductos(productsFiltered);
-            }else{
-                //VAMOS MOSTRAR CARR
-                setProductos(response)
-            }
+        const queryRef= categoryId ? query(collection(tf,'Items'),where('categoria','==',categoryId)) : collection(tf,'Items')
+        getDocs(queryRef).then((response)=>{
+            const results=response.docs
+            const docs=results.map(doc=>{
+                return{
+                    ...doc.data(),
+                    id:doc.id
+                }
+            })
+            setProductos(docs);
+            setLoading(false)
         })
     },[categoryId])
     return(
         <div className="Item-List-Container">
-            <p>Item list container</p>
-            <p>{productosCarrito}</p>
-            <ItemList items={productos}/>
+            {
+                loading ?
+                <p>Cargando...</p>
+                :
+            <ItemList items={productos}/> 
+            }
         </div>
     )
 }

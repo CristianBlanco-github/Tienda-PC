@@ -1,31 +1,28 @@
 import { useEffect,useState } from "react";
-import { arregloProductos } from "../baseDatos/baseDatos";
 import { ItemDetail} from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
+import {tf} from '../../utils/firebase'
+import { doc, getDoc } from "firebase/firestore";
 
 export const ItemDetailContainer=()=>{
     const {id}=useParams();
     const[itemProduct, setItemProduct]=useState({});
-    
-    const promesa =new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            resolve(arregloProductos);
-        },2000);
-    })
-
     useEffect(()=>{
         const getProducto = async()=>{
-            const productos=await promesa;
-            // console.log('productos',productos);
-            const producto =productos.find(elemento=>elemento.id === parseInt(id))
-            setItemProduct(producto)
-            // setItem(producto) 
+            //creamos referencia
+            const queryRef= doc(tf,'Items',id)
+            //hacemos consulta
+            const response= await getDoc(queryRef)
+            const newdoc={
+                ...response.data(),
+                id:response.id
+            }
+            setItemProduct(newdoc) 
         }
         getProducto()
     },[id])
     return(
         <div className="Item-List-Container">
-            <p sytle={{with:"100%",color:"white"}}>Item list container</p>
             <ItemDetail item={itemProduct}/>
         </div>
     )

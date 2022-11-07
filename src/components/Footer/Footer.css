@@ -1,0 +1,9 @@
+.tiendamia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FD611A;
+    width: 100%;
+    height:100px ;
+}
+

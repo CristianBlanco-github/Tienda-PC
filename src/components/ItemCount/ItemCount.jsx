@@ -1,8 +1,6 @@
 import './intemCount.css'
-import { useState, useContext } from 'react';
-import { CartContext } from '../../context/CartContext';
+import { useState} from 'react';
 export const ItemCount=({stock, inicial, onAdd})=>{
-    const value=useContext(CartContext)
     const [contador, setContador] = useState(inicial);
     const incrementarContador = () => {
         if(contador<stock){
@@ -14,8 +12,6 @@ export const ItemCount=({stock, inicial, onAdd})=>{
             setContador(contador - 1);
         }
         };
-        console.log('contador',contador)
-
     return(
         <div className="input">
             <p>Stock Disponible:{stock}</p>
@@ -24,7 +20,7 @@ export const ItemCount=({stock, inicial, onAdd})=>{
                 <p className='input__number'>{contador}</p>
                 <button disabled={stock===0} onClick={incrementarContador} className='botonControl'>+</button>
             </div>
-            <button disabled={stock===0}className='botonAgregar' onClick={()=>onAdd(contador)}>Agregar al carrito</button>
+            <button className='boton-agregar' disabled={stock===0} onClick={()=>onAdd(contador)}>Agregar al carrito</button>
         </div>
     )
 }

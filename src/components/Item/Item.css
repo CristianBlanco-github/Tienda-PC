@@ -1,8 +1,14 @@
 .tarjeta-producto{
-    background-color: #FFFFFF;
-    border-radius: 10px;
+    background-color: rgb(253, 149, 102);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
 }
 .imgar{
+    margin-top: 20px;
     width: 100px;
     height: 100px;
+}
+.boton-ver{
+    border-radius: 10px;
 }

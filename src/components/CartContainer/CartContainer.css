@@ -1,0 +1,25 @@
+.carrito{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 30;
+}
+.portada{
+    display: flex;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.botns{
+    border-radius: 10px;
+}
+.vaciartodo{
+    border-radius: 10px;
+    display: flex;
+}
+.btn{
+    background-color: aqua;
+}  
+

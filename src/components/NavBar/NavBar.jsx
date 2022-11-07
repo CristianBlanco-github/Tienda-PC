@@ -14,14 +14,10 @@ export const NavBar=()=>{
                 <NavLink className={({isActive})=>isActive===true?'claseActive':'claseInactive'}to="/category/procesadores"><li><a href="/">Procesadores</a></li></NavLink>
                 <NavLink className={({isActive})=>isActive===true?'claseActive':'claseInactive'}to="/category/periferiicos"><li><a href="/">Perifericos</a></li></NavLink>
             </div>
-            {/* <ul>              
-                <li><a href="/">Productos</a></li>
-                <li><a href="/">Ayuda</a></li>
-                <li><a href="/">Arma tu pc</a></li>
-                <li><a href="/">Marca sponsor</a></li>           
-            </ul> */}
             <div>
-                <CartWidget/>
+                <Link to="/cart">
+                    <CartWidget/>
+                </Link>
             </div>
         </nav>
     )

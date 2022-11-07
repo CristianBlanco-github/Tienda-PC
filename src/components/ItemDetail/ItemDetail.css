@@ -1,6 +1,8 @@
 .detail-container{
     display: flex;
     background-color: rgb(238, 238, 238);
+    margin-top:30px ;
+    margin-bottom:30px ;
 }
 .img-container{
     color: black;
@@ -10,3 +12,28 @@
 .letras{
     position: relative;
 }
+.botoninicio{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: stretch;
+    text-decoration: none;
+}
+.botoninicios{
+    text-decoration-line:none;
+    margin-top: 60px;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.botonterminar{
+    text-decoration-line:none;
+    margin-top: 50px;
+    color: black;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
