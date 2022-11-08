@@ -34,8 +34,8 @@ export const CartContainer=()=>{
                                 <p>{producto.title}</p>
                             </div>
                             <div>
-                                <p>Precio Unitario:{producto.price}$</p>
-                                <p>total cantidad:{producto.cantidadPrice}$</p>
+                                <p>Precio Unitario:${producto.price}</p>
+                                <p>total cantidad:{producto.cantidadPrice}</p>
                                 <p>Cantidad:{producto.cantidad}#</p>
                             </div>
                             <button className="botns" onClick={()=>removeItem(producto.id)}>Eliminar</button>
@@ -43,7 +43,7 @@ export const CartContainer=()=>{
                     ))
                 }
                 <p><strong>Cantidad de productos Total:</strong>{getTotalCantidad()}</p>
-                <p><strong>Precio Total:</strong>{getTotalPrecio()}</p>
+                <p><strong>Precio Total:</strong>${getTotalPrecio()}</p>
                 <button className="vaciartodo" onClick={()=>removeCarrito()}>	&#128465;&#65039; Vaciar Carrito</button>
                 <Link to='/checkout'>
                     <button className='btn btn-secondary'><small>Checkout</small>

@@ -5,7 +5,7 @@ export const Item=({item})=>{
         <div className="tarjeta-producto">
             <img className='imgar' src={item.pictureUrl} alt={item.title} />
             <p>{item.title}</p>
-            <p>{item.price}</p>
+            <p>${item.price}</p>
             <Link to={`/item/${item.id}`}>
                 <button className="boton-ver"><span>Ver detalle</span></button>
             </Link>
